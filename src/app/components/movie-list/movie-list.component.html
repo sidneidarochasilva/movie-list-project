@@ -1,0 +1,37 @@
+<div>
+  <div class="mb-3" style="width: auto;padding: 20px;" *ngIf="listMovies.length > 0">
+
+    <div class="card-movie row g-0" *ngFor="let movie of listMovies;">
+
+      <div class="col-md-3 d-flex justify-content-center">
+        <img [src]="movie?.Poster" class="img-fluid rounded-start" alt="imagem do filme procurado">
+      </div>
+      <div class="col-md-8 ">
+        <div class="card-body">
+
+          <app-movie-title [movie]="movie" [favorite]="movie.favorited"></app-movie-title>
+
+          <p class="card-text">{{movie?.Plot}}</p>
+
+          <p class="card-text"><small class="text-muted"><strong>Actors:</strong> {{movie?.Actors}}</small></p>
+
+          <p class="card-text"><small class="text-muted"><strong>Diretor:</strong> {{movie?.Director}}</small></p>
+
+          <p class="card-text"><small class="text-muted"><strong>Genero:</strong> {{movie?.Genre}}</small></p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <span *ngIf="loading" class="spin"></span>
+
+  <div class="not-found" *ngIf="notFound">
+
+    <img style="height: 300px;" src="../../../assets/images/10768855_4503796.jpg" class="img-fluid rounded-start"
+      alt="movie not found">
+    <h5>Desculpe! não encontramos o filme procurado, tente novamente...</h5>
+  </div>
+
+</div>

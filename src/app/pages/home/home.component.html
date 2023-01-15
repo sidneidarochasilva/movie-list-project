@@ -1,0 +1,9 @@
+<div class="p-3 w-100 d-flex justify-content-center title">
+  <h1>Buscador de Filmes</h1>
+</div>
+<app-movie-list (awaitingSearch)=" awaiting = $event"></app-movie-list>
+
+<div class="awaiting-search" *ngIf="awaiting">
+  <i class="bi bi-search"></i>
+  <p>Busque por seu filme favorito...</p>
+</div>

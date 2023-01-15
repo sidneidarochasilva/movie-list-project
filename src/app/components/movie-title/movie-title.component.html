@@ -1,0 +1,16 @@
+<div>
+
+  <div class="d-flex justify-content-between">
+    <h2 class="card-title">{{movie?.Title}}</h2>
+
+    <span class="d-flex gap-3" *ngIf="favorite === false" (click)="favorites(true,movie)"><i
+        class="bi bi-heart"></i></span>
+    <span class="d-flex gap-3" *ngIf="favorite" (click)="favorites(false,movie)"> <i
+        class="bi bi-heart-fill"></i></span>
+
+  </div>
+
+  <div class="d-flex align-items-center gap-3 mb-3">
+    <rating [ngModel]="movie?.imdbRating" [max]="max" [readonly]="true"></rating>
+  </div>
+</div>

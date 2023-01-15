@@ -1,0 +1,23 @@
+<div>
+  <div class="mb-3" style="width: auto;padding: 20px;" *ngIf="listMovies.length > 0">
+    <div class="p-3 w-100 d-flex justify-content-center title flex-column align-items-center">
+      <h1>Histórico de pesquisas</h1>
+      <button class=" btn btn-primary" (click)="clearStorage()">Limpar histórico</button>
+    </div>
+
+    <div class="card-movie row g-0 mt-5">
+      <div class="list-group" *ngFor="let movie of listMovies">
+
+        <a routerLink="/home/{{movie?.Title}}" class="list-group-item list-group-item-light">{{movie?.Title}} -
+          {{movie?.moment}}</a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="messages-for-user" style="margin-top:200px" *ngIf="listMovies.length === 0">
+    <h5>Sem histórico de filmes...</h5>
+  </div>
+
+</div>

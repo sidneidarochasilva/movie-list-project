@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary" data-bs-theme="dark" style="position: fixed;
+width: 100%;top: 0;z-index: 99999;">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check " name="btnradio" id="btnradio1" autocomplete="off">
+        <label class="btn  btn-primary mb-0" for="btnradio1" routerLink="">Home</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn  btn-primary mb-0 " for="btnradio2" routerLink="favorites">Meus Favoritos</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn  btn-primary mb-0 " for="btnradio3" routerLink="searchHistory">Ultimas buscas</label>
+      </div>
+    </div>
+
+  </div>
+
+  <form class="input-group mr-20 d-flex" style="margin: 20px;" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input class="form-control me-2" type="search" formControlName="name" placeholder="Comece sua busca por aqui..."
+      aria-label="Search">
+
+    <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+  </form>
+
+</nav>
