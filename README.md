@@ -6,3 +6,8 @@ Projeto  buscador de filmes em Angular utilizando a api OMDb API, para estiliza�
 
 1º passo: npm install
 2º passo: npm start
+
+#Deployed
+
+https://movie-list-project-pi.vercel.app/
+
