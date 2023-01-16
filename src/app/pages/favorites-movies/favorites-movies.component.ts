@@ -17,4 +17,6 @@ export class FavoritesMoviesComponent implements OnInit {
     this.movies = this.storageService.getMovie(this.storageService.storageName) || [];
   }
 
+
+
 }

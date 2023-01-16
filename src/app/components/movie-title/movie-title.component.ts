@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Imovie } from 'src/app/models/Imovie';
 import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
+
+
 
 
 
@@ -11,9 +13,13 @@ import { LocalStorageService } from 'src/app/services/local-storage/local-storag
 })
 export class MovieTitleComponent implements OnInit {
 
+
   @Input() movie: Imovie | undefined;
 
   @Input() favorite: boolean | undefined = false;
+
+  @Output() newList: any = new EventEmitter<any>();
+
 
   listMovie: Imovie[] = [];
 
@@ -44,9 +50,16 @@ export class MovieTitleComponent implements OnInit {
 
       //remove movie localstorage
       this.listMovie = this.listMovie.filter(x => x.imdbID !== movie.imdbID);
+
+      let url = window.location.pathname;
+
+      //update parent component list
+      if (url === '/favorites') {
+        this.newList.emit(this.listMovie)
+      }
+
       this.saveMovieList();
       this.favorite = state;
-
     }
 
   }
@@ -55,5 +68,7 @@ export class MovieTitleComponent implements OnInit {
   saveMovieList() {
     this.storageService.setMovie(this.storageService.storageName, this.listMovie)
   }
+
+
 
 }

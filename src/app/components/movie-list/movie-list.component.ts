@@ -12,7 +12,6 @@ import { LocalStorageService } from 'src/app/services/local-storage/local-storag
   styleUrls: ['./movie-list.component.less']
 
 })
-
 export class MovieListComponent implements OnInit {
 
   @Input() listMovies: Imovie[];
@@ -105,6 +104,8 @@ export class MovieListComponent implements OnInit {
     }
 
   }
+
+
 
 
 }

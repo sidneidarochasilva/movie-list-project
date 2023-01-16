@@ -9,7 +9,8 @@
       <div class="col-md-8 ">
         <div class="card-body">
 
-          <app-movie-title [movie]="movie" [favorite]="movie.favorited"></app-movie-title>
+          <app-movie-title [movie]="movie" [favorite]="movie.favorited"
+            (newList)="listMovies = $event"></app-movie-title>
 
           <p class="card-text">{{movie?.Plot}}</p>
 
